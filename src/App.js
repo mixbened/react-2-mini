@@ -13,25 +13,52 @@ class App extends Component {
     super();
     this.state = {
       allowEdit: true,
-      fontColor: 'lightblue',
+      fontColor: 'black',
       fontSize: 12,
       fontFamily: 'monospace',
     }
+    this.updateColor = this.updateColor.bind(this)
   }
   // updateColor
-
+  updateColor(val){
+    this.setState(() => {
+      return {
+        fontColor: val,
+      }
+    })
+  }
   // updateSize
-
+  updateSize(val){
+    this.setState(() => {
+      return {
+        fontSize: val,
+      }
+    })
+  }
   // updateFamily
-
+  updateFamily(val){
+    this.setState(() => {
+      return {
+        fontFamily: val,
+      }
+    })
+  }
   // updateEditStatus
+  updateStatus(val){
+    this.setState(() => {
+      return {
+        fontStatus: val,
+      }
+    })
+  }
+
 
   render() {
     return (
       <div>
         <div className="headerBar">
           { /* Render EditToggle */ }
-          { /* Render ColorChanger */ }
+          <ColorChanger fontColor={this.state.fontColor} updateColor={this.updateColor}/>
           { /* Render SizeChanger */ }
           { /* Render FamilyChanger */ }
         </div>

@@ -35,5 +35,3 @@ export default class TextContainer extends Component {
 }
 
 
-
-
